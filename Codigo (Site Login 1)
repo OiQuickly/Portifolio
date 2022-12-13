@@ -1,0 +1,229 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="login-card-container">
+        <div class="login-left">
+            <div class="login-header"> 
+                <h1>Welcome to Quickly Site</h1>
+                <p>Please login to use the platform</p>
+            </div>
+            <form class="login-card-form">
+                    <div class="form-item">
+                        <label for="email">Enter Email</label>
+                        <input type="text">
+                    </div>
+                    <div class="form-item">
+                        <label for="password">Enter Password</label>
+                        <input type="password">
+                    </div>
+                    <div class="form-item-other">
+                        <div class="checkbox">
+                            <input type="checkbox" id="rememberMeCheckbox" checked>
+                            <label for="rememberMeCheckbox" class="checkboxLabel">Remember me</label> 
+                        </div>
+                        <a href="#">I forgot my password</a>
+                    </div>
+                    <button type="submit">Sign In</button>
+            </form>
+            <div class="login-card-footer">
+                Don't have an account? <a href="#">Create a free account</a>
+            </div>
+            <div class="login-card-social">
+                <div class="login-card-social-btns">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"></path>
+                         </svg>
+                    </a>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-google" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                            <path d="M17.788 5.108a9 9 0 1 0 3.212 6.892h-8"></path>
+                         </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="login-right">
+            <img src="./image.svg">
+        </div>
+    </div>
+</body>
+</html>
+
+SASS
+
+@import url(reset.css);
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&family=PT+Sans:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "PT Sans", sans-serif;
+    background: rgb(0,99,255);
+    background: linear-gradient(45deg, rgba(0,99,255,1) 0%, rgba(51,76,154,1) 25%, rgba(126,126,126,1) 100%);
+    padding: 40px;
+}
+
+.login-card-container {
+    min-height: calc(100vh - 40px * 2);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.login-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: content;
+    padding-left: 150px;
+    background-color: white;
+}
+
+.login-right {
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+
+    img {
+        width: 80%;
+    }
+}
+
+.login-header {
+    margin-bottom: 50px;
+    h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        opacity: .7; 
+    }
+}
+
+.login-card-form {
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.login-card-form .form-item-other {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(1rem * .8);
+    margin-bottom: .5rem;
+}
+
+.login-card-footer {
+    display: flex;
+    justify-content: content;
+    padding-left: 100px;
+    margin-top: 1.5rem;
+    font-size: calc(1rem * .8);
+}
+
+.login-left a {
+    text-decoration: none;
+    color: rgb(0,99,255,1);
+}
+
+.form-item label:not(.checkboxLabel) {
+    display: inline-block;
+    background-color: white;
+    margin-bottom: 10px;
+    position: absolute;
+    padding: 0 10px;
+    transform: translate(30px, -10px);
+    font-size: 14px;
+}
+
+input[type='text'],
+input[type='password'] {
+    border: 1px solid black;
+    height: 55px;
+    padding: 0 2rem;
+    width: 100%;
+    outline: none;
+    transition: background .5s;
+    font-size: 18px;
+    border-radius: 100px;   
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+    accent-color: rgb(0,99,255);
+}
+
+button {
+    border: none;
+    background: rgb(0,99,255);
+    background: linear-gradient(45deg, rgba(0,99,255,1) 0%, rgba(51,76,154,1) 25%, rgba(126,126,126,1) 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    height: 55px;
+    cursor: pointer;
+}
+
+.login-card-social {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: content;
+    padding-left: 150px;
+    margin-top: 3rem;
+}
+
+.login-card-social-btns {
+    display: flex;
+    gap: 2rem;
+}
+
+.login-card-social-btns a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color:rgba(0,99,255,1);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(126,126,126, .6);
+    border-radius:  100px;
+    transition: all .5;
+}
+
+/* Responsive */
+
+@media (max-width:1350px) {}
+
+@media (max-width:768px) {}
